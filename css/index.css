@@ -348,7 +348,7 @@ em {
   height: 2.5rem;
   width: 2.5rem;
   border-radius: 50%;
-  background-image: url("../../assets/images/iconColor.png");
+  background-image: url("../assets/images/iconColor.png");
   background-color: hsl(0deg, 0%, 20%);
   background-repeat: no-repeat;
   background-position: center;
@@ -364,8 +364,8 @@ em {
 
 .focalLeft {
   width: 100%;
-  min-width: 30rem;
   max-width: 115rem;
+  min-width: 30rem;
 }
 .focalLeft__roof {
   font-family: "Roboto Slab", serif;
