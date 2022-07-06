@@ -5,7 +5,7 @@
 .focalLeft{
     width: 100%;
     max-width: 115rem;
-    // margin-bottom: 8rem;
+    min-width: 30rem;
 
     &__roof{
         @include fonts.moduleRoof;
