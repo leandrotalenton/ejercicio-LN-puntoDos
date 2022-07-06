@@ -1,0 +1,59 @@
+@use "./colors";
+@use "./responsive";
+
+
+
+@mixin cardParagraph {
+    color: map-get(colors.$colors , 'font' , 'primary' );
+    font-family: Arial, Times;
+    font-weight: 400;
+    font-style: normal;
+    font-size: 2rem;
+    line-height: 3rem;
+}
+
+@mixin cardRegularAuthor {
+    @include cardParagraph;
+    font-weight: 700;
+    font-size: 1.75rem;
+    line-height: 2rem;
+}
+
+@mixin cardAuthorAuthor {
+    @include cardRegularAuthor;
+    font-size: 2rem;
+    line-height: 3rem;
+}
+
+@mixin cardTitle {
+    @include cardParagraph;
+    font-weight: 900;
+    font-family: 'Roboto Slab', serif; // font simil SuecaSlab
+    letter-spacing: -0.025rem;
+    font-size: 2.5rem;
+    line-height: 3rem;
+    @include responsive.respondTo('tablet'){
+        font-size: 2.25rem;
+        line-height: 3.25rem;
+        font-weight: 400;
+    }
+}
+
+@mixin cardTitleLead {
+    @include cardTitle;
+    color: map-get(colors.$colors , 'font' , 'secondary' );
+}
+
+@mixin cardTitleFocal {
+    @include cardTitle;
+    @include responsive.respondTo('tablet'){
+        font-size: 4rem;
+        line-height: 4.5rem;
+        font-weight: 900;
+    }
+}
+
+@mixin cardTitleFocalLead {
+    @include cardTitleFocal;
+    color: map-get(colors.$colors , 'font' , 'secondary' );
+}

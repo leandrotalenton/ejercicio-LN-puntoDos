@@ -1,0 +1,377 @@
+@charset "UTF-8";
+* {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+}
+
+/* Para mantener la consistencia en la interfaz con respecto a los márgenes, los rellenos y los tamaños, definimos un sistema de unidades utilizando la regla de la grilla del 8. */
+:root {
+  font-size: 50%;
+}
+
+li {
+  list-style: none;
+}
+
+a {
+  text-decoration: none;
+}
+
+em {
+  font-weight: inherit;
+  font-style: normal;
+}
+
+/* general styles for all cards */
+.card a {
+  min-width: 46rem;
+  max-width: 46rem;
+  display: flex;
+  flex-direction: column;
+  background-color: hsl(0deg, 0%, 100%);
+  /* styles that exclude "card author" cards */
+  /* styles only for left focal card */
+}
+@media screen and (min-width: 85.375em) {
+  .card a:hover {
+    opacity: 80%;
+    transition: 200ms ease-out;
+  }
+}
+.card a h2 {
+  color: hsl(240deg, 5%, 12%);
+  font-family: Arial, Times;
+  font-weight: 400;
+  font-style: normal;
+  font-size: 2rem;
+  line-height: 3rem;
+  font-weight: 900;
+  font-family: "Roboto Slab", serif;
+  letter-spacing: -0.025rem;
+  font-size: 2.5rem;
+  line-height: 3rem;
+  text-align: center;
+  padding: 2rem 2rem 1rem 2rem;
+  margin: 2.5rem 2.5rem 0rem 2.5rem;
+  border: 0.125rem solid hsl(0deg, 0%, 80%);
+  border-bottom: none;
+}
+@media screen and (min-width: 48em) {
+  .card a h2 {
+    font-size: 2.25rem;
+    line-height: 3.25rem;
+    font-weight: 400;
+  }
+}
+.card a h2 em {
+  color: hsl(240deg, 5%, 12%);
+  font-family: Arial, Times;
+  font-weight: 400;
+  font-style: normal;
+  font-size: 2rem;
+  line-height: 3rem;
+  font-weight: 900;
+  font-family: "Roboto Slab", serif;
+  letter-spacing: -0.025rem;
+  font-size: 2.5rem;
+  line-height: 3rem;
+  color: hsl(216deg, 98%, 40%);
+}
+@media screen and (min-width: 48em) {
+  .card a h2 em {
+    font-size: 2.25rem;
+    line-height: 3.25rem;
+    font-weight: 400;
+  }
+}
+@media screen and (min-width: 48em) {
+  .card a h2 {
+    text-align: left;
+  }
+}
+.card a > p {
+  color: hsl(240deg, 5%, 12%);
+  font-family: Arial, Times;
+  font-weight: 400;
+  font-style: normal;
+  font-size: 2rem;
+  line-height: 3rem;
+  margin: 0 2rem 1rem 2rem;
+  order: 2;
+}
+.card a address {
+  flex-grow: 1;
+  border: 0.125rem solid hsl(0deg, 0%, 80%);
+  border-top: none;
+  display: flex;
+  gap: 1rem;
+  align-items: center;
+  flex-direction: column;
+  margin: 0rem 2.5rem 2rem 2.5rem;
+  padding: 0rem 2rem 2rem 2rem;
+  justify-content: end;
+  position: relative;
+}
+.card a address p {
+  color: hsl(240deg, 5%, 12%);
+  font-family: Arial, Times;
+  font-weight: 400;
+  font-style: normal;
+  font-size: 2rem;
+  line-height: 3rem;
+  font-weight: 700;
+  font-size: 1.75rem;
+  line-height: 2rem;
+  font-size: 2rem;
+  line-height: 3rem;
+}
+.card a address img {
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: cover;
+  width: 7.07rem;
+  height: 7.07rem;
+  border-radius: 50%;
+  border: 0.125rem solid hsl(0deg, 0%, 100%);
+}
+.card a address::after {
+  content: "";
+  width: 7.07rem;
+  height: 0.125rem;
+  background-color: hsl(0deg, 0%, 35%);
+  position: absolute;
+  bottom: -0.125rem;
+}
+@media screen and (min-width: 48em) {
+  .card a address::after {
+    display: none;
+  }
+}
+@media screen and (min-width: 48em) {
+  .card a address {
+    flex-direction: row;
+    justify-content: flex-start;
+  }
+}
+.card a > .mediaContainer {
+  position: relative;
+  margin-bottom: 1rem;
+  aspect-ratio: 3/2;
+  overflow: hidden;
+  border: 0.125rem solid hsl(0deg, 0%, 80%);
+  display: flex;
+  justify-content: center;
+}
+.card a > .mediaContainer img {
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: cover;
+}
+.card a > .mediaContainer ~ h2 {
+  padding: 0;
+  text-align: left;
+  margin: 0;
+  border: none;
+  order: 0;
+  margin: 0 2rem 1rem 2rem;
+}
+@media screen and (min-width: 48em) {
+  .card a > .mediaContainer ~ h2 {
+    margin: 0 0rem 1rem 0rem;
+  }
+}
+.card a > .mediaContainer ~ address {
+  flex-direction: row;
+  margin: 0;
+  border: none;
+  margin: 0 2rem 1rem 2rem;
+  padding: 0;
+  justify-content: left;
+  align-items: flex-end;
+  order: 3;
+}
+@media screen and (min-width: 48em) {
+  .card a > .mediaContainer ~ address {
+    margin: 0 0rem 1rem 0rem;
+  }
+}
+.card a > .mediaContainer ~ address p {
+  color: hsl(240deg, 5%, 12%);
+  font-family: Arial, Times;
+  font-weight: 400;
+  font-style: normal;
+  font-size: 2rem;
+  line-height: 3rem;
+  font-weight: 700;
+  font-size: 1.75rem;
+  line-height: 2rem;
+  line-height: 3rem;
+}
+.card a > .mediaContainer ~ address::after {
+  display: none;
+}
+@media screen and (min-width: 48em) {
+  .card a > p {
+    margin: 0 0rem 1rem 0rem;
+  }
+}
+.card a > p ~ h2 {
+  color: hsl(240deg, 5%, 12%);
+  font-family: Arial, Times;
+  font-weight: 400;
+  font-style: normal;
+  font-size: 2rem;
+  line-height: 3rem;
+  font-weight: 900;
+  font-family: "Roboto Slab", serif;
+  letter-spacing: -0.025rem;
+  font-size: 2.5rem;
+  line-height: 3rem;
+}
+@media screen and (min-width: 48em) {
+  .card a > p ~ h2 {
+    font-size: 2.25rem;
+    line-height: 3.25rem;
+    font-weight: 400;
+  }
+}
+@media screen and (min-width: 48em) {
+  .card a > p ~ h2 {
+    font-size: 4rem;
+    line-height: 4.5rem;
+    font-weight: 900;
+  }
+}
+.card a > p ~ h2 em {
+  color: hsl(240deg, 5%, 12%);
+  font-family: Arial, Times;
+  font-weight: 400;
+  font-style: normal;
+  font-size: 2rem;
+  line-height: 3rem;
+  font-weight: 900;
+  font-family: "Roboto Slab", serif;
+  letter-spacing: -0.025rem;
+  font-size: 2.5rem;
+  line-height: 3rem;
+  color: hsl(216deg, 98%, 40%);
+}
+@media screen and (min-width: 48em) {
+  .card a > p ~ h2 em {
+    font-size: 2.25rem;
+    line-height: 3.25rem;
+    font-weight: 400;
+  }
+}
+@media screen and (min-width: 48em) {
+  .card a > p ~ h2 em {
+    font-size: 4rem;
+    line-height: 4.5rem;
+    font-weight: 900;
+  }
+}
+@media screen and (min-width: 48em) {
+  .card a > p ~ .mediaContainer {
+    order: 4;
+    margin-top: 1rem;
+    margin-bottom: 0;
+  }
+}
+
+.live {
+  display: none;
+  position: absolute;
+  bottom: 1rem;
+  left: 1rem;
+  width: 9.5rem;
+  height: 3rem;
+  background-color: hsl(357deg, 87%, 38%);
+  color: hsl(0deg, 0%, 100%);
+  font-family: Arial;
+  font-size: 1.375rem;
+  font-weight: 400;
+  line-height: 2rem;
+  letter-spacing: 0;
+  text-align: center;
+  border-radius: 2rem;
+  gap: 0.25rem;
+}
+@media screen and (min-width: 85.375em) {
+  .live {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+  }
+}
+.live::before {
+  content: "";
+  width: 0.66rem;
+  height: 0.66rem;
+  background-color: hsl(0deg, 0%, 100%);
+  border-radius: 50%;
+  margin: 0 0.9rem 0 1.15rem;
+  animation: pulse-white 2s infinite;
+}
+
+@keyframes pulse-white {
+  0% {
+    box-shadow: 0 0 0 0 hsl(0deg, 0%, 100%);
+  }
+  70% {
+    box-shadow: 0 0 0 0.75rem rgba(255, 255, 255, 0);
+  }
+  100% {
+    box-shadow: 0 0 0 0 rgba(255, 255, 255, 0);
+  }
+}
+.subscriberExclusive {
+  display: none;
+  position: absolute;
+  bottom: 1rem;
+  left: 1rem;
+  padding: 0.5rem 0.75rem 0.5rem 0.5rem;
+  gap: 0.5rem;
+  width: 20rem;
+  height: 3.5rem;
+  background: hsl(0deg, 0%, 100%);
+  border: 1px solid hsl(0deg, 0%, 89%);
+  border-radius: 2rem;
+  color: hsl(240deg, 5%, 12%);
+  font-family: "Arial";
+  font-style: normal;
+  font-weight: 700;
+  font-size: 1.5rem;
+  line-height: 2rem;
+}
+.subscriberExclusive::before {
+  content: "";
+  height: 2.5rem;
+  width: 2.5rem;
+  border-radius: 50%;
+  background-image: url("../../assets/images/iconColor.png");
+  background-color: hsl(0deg, 0%, 20%);
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: cover;
+}
+@media screen and (min-width: 85.375em) {
+  .subscriberExclusive {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+  }
+}
+
+body {
+  min-height: 100vh;
+  background-color: rgb(234, 234, 234);
+}
+
+main {
+  display: flex;
+  flex-direction: column;
+  gap: 4rem;
+}
+
+/*# sourceMappingURL=index.css.map */

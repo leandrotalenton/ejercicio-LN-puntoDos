@@ -1,0 +1,13 @@
+@use "./reset";
+@use "./components/compIndex";
+
+body{
+    min-height: 100vh;
+    background-color: rgb(234, 234, 234);
+}
+
+main{
+    display: flex;
+    flex-direction: column;
+    gap: 4rem;
+}

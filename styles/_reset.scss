@@ -1,0 +1,24 @@
+* {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+
+// https://www.figma.com/file/UVY3wVRriGORNQUz51Drlr/DS-%2F-LN-Components?node-id=1043%3A591
+/* Para mantener la consistencia en la interfaz con respecto a los márgenes, los rellenos y los tamaños, definimos un sistema de unidades utilizando la regla de la grilla del 8. */
+:root {
+    font-size: 50%; // => (1 rem = 8px)
+}
+
+li {
+    list-style: none;
+}
+
+a {
+    text-decoration: none;
+}
+
+em {
+	font-weight: inherit;
+	font-style: normal;
+}

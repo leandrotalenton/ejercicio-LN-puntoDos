@@ -1,0 +1,46 @@
+@use "../mixins/images";
+@use "../mixins/colors";
+@use "../mixins/responsive";
+
+
+.subscriberExclusive{
+    display: none;
+    
+    position: absolute;
+    bottom: 1rem;
+    left: 1rem;
+
+    padding: 0.5rem 0.75rem 0.5rem 0.5rem;
+    gap: 0.5rem;
+
+    width: 20rem;
+    height: 3.5rem;
+
+    background: map-get(colors.$colors , 'component' , 'background' );
+
+    border: 1px solid map-get(colors.$colors , 'component' , 'divider' );
+    border-radius: 2rem;
+
+    color: map-get(colors.$colors , 'font' , 'primary' );
+    font-family: 'Arial';
+    font-style: normal;
+    font-weight: 700;
+    font-size: 1.5rem;
+    line-height: 2rem;
+
+    &::before{
+        content:"";
+        height: 2.5rem;
+        width: 2.5rem;
+        border-radius: 50%;
+        background-image: url("../../assets/images/iconColor.png");
+        background-color: hsl(0, 0%, 20%);
+        @include images.imagePropertys;
+    }
+
+    @include responsive.respondTo('desktop'){
+        display: flex;
+        flex-direction: row;
+        align-items: center;
+    };
+}
