@@ -364,6 +364,7 @@ em {
 
 .focalLeft {
   width: 100%;
+  min-width: 30rem;
   max-width: 115rem;
 }
 .focalLeft__roof {
