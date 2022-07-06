@@ -1,0 +1,55 @@
+@use "../../mixins/responsive";
+@use "../../mixins/fonts";
+@use "../../mixins/colors";
+
+.focalLeft{
+    width: 100%;
+    max-width: 115rem;
+    // margin-bottom: 8rem;
+
+    &__roof{
+        @include fonts.moduleRoof;
+        padding-bottom: 1rem;
+        margin: 0rem 2rem 2rem 2rem;
+        border-bottom: 0.125rem solid map-get(colors.$colors , 'component' , 'divider' );
+        @include responsive.respondTo('tablet'){
+            margin: 0rem 0rem 2rem 0rem;
+        }
+    }
+
+    &__container{
+        width: 100%;
+        display: flex;
+        flex-direction: column;
+        gap: 4rem;
+        // background-color: lightcoral;
+
+        @include responsive.respondTo('tablet'){
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            grid-template-rows: repeat(2, auto);
+            column-gap: 2rem;
+            row-gap: 4rem;
+            grid-template-areas: 
+            "focalLeft focalLeft rightTop"
+            "focalLeft focalLeft rightBottom"
+        };
+        
+        .card{
+            @include responsive.respondTo('tablet'){
+                &:nth-child(1){
+                    grid-area: focalLeft;
+                    padding-right: 2rem;
+                    border-right: 0.125rem solid map-get(colors.$colors , 'component' , 'divider' );
+                }
+                &:nth-child(2){
+                    grid-area: rightTop;
+                }
+                &:nth-child(3){
+                    grid-area: rightBottom;
+                }
+            }
+        }
+    }
+
+}

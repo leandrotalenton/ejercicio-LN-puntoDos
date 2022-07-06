@@ -57,3 +57,12 @@
     @include cardTitleFocal;
     color: map-get(colors.$colors , 'font' , 'secondary' );
 }
+
+@mixin moduleRoof {
+    // color: map-get(colors.$colors , 'font' , 'primary' );
+    font-family: 'Roboto Slab', serif; // font simil SuecaSlab
+    font-size: 3rem;
+    line-height: 4rem;
+    font-weight: 800;
+    letter-spacing: -0.05rem;
+}

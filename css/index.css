@@ -25,8 +25,6 @@ em {
 
 /* general styles for all cards */
 .card a {
-  min-width: 46rem;
-  max-width: 46rem;
   display: flex;
   flex-direction: column;
   background-color: hsl(0deg, 0%, 100%);
@@ -167,6 +165,7 @@ em {
   background-repeat: no-repeat;
   background-position: center;
   background-size: cover;
+  width: 100%;
 }
 .card a > .mediaContainer ~ h2 {
   padding: 0;
@@ -363,15 +362,62 @@ em {
   }
 }
 
-body {
-  min-height: 100vh;
-  background-color: rgb(234, 234, 234);
+.focalLeft {
+  width: 100%;
+  max-width: 115rem;
 }
-
-main {
+.focalLeft__roof {
+  font-family: "Roboto Slab", serif;
+  font-size: 3rem;
+  line-height: 4rem;
+  font-weight: 800;
+  letter-spacing: -0.05rem;
+  padding-bottom: 1rem;
+  margin: 0rem 2rem 2rem 2rem;
+  border-bottom: 0.125rem solid hsl(0deg, 0%, 89%);
+}
+@media screen and (min-width: 48em) {
+  .focalLeft__roof {
+    margin: 0rem 0rem 2rem 0rem;
+  }
+}
+.focalLeft__container {
+  width: 100%;
   display: flex;
   flex-direction: column;
   gap: 4rem;
+}
+@media screen and (min-width: 48em) {
+  .focalLeft__container {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    grid-template-rows: repeat(2, auto);
+    column-gap: 2rem;
+    row-gap: 4rem;
+    grid-template-areas: "focalLeft focalLeft rightTop" "focalLeft focalLeft rightBottom";
+  }
+}
+@media screen and (min-width: 48em) {
+  .focalLeft__container .card:nth-child(1) {
+    grid-area: focalLeft;
+    padding-right: 2rem;
+    border-right: 0.125rem solid hsl(0deg, 0%, 89%);
+  }
+  .focalLeft__container .card:nth-child(2) {
+    grid-area: rightTop;
+  }
+  .focalLeft__container .card:nth-child(3) {
+    grid-area: rightBottom;
+  }
+}
+
+body {
+  min-height: 100vh;
+}
+
+h1 {
+  background-color: rgb(234, 234, 234);
+  padding: 2rem;
 }
 
 /*# sourceMappingURL=index.css.map */

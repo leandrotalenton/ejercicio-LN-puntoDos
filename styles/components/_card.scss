@@ -5,8 +5,6 @@
 
 /* general styles for all cards */
 .card a{
-    min-width: 46rem;
-    max-width: 46rem;
     display: flex;
     flex-direction: column;
     background-color: map-get(colors.$colors , 'component' , 'background' );
@@ -97,6 +95,7 @@
 
         & img{
             @include images.imagePropertys;
+            width: 100%;
         }
 
         &~h2{
