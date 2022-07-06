@@ -1,0 +1,11 @@
+@use "./reset";
+@use "./components/compIndex";
+@use "./components/modules/moduleIndex";
+
+body{
+    min-height: 100vh;
+}
+h1{
+    background-color: rgb(234, 234, 234);
+    padding: 2rem;
+}
